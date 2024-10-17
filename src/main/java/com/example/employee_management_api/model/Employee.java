@@ -31,10 +31,9 @@ public class Employee {
     private List<@Pattern(regexp = "\\d{10}", message = "Phone number must be 10 digits") String> phoneNumbers;
 
     @NotBlank(message = "Date of joining is mandatory")
-    private String doj;  // DOJ should be in YYYY-MM-DD format
+    private String doj;
 
     @Positive(message = "Salary must be positive")
     private double salary;
 
-    // Lombok will automatically generate getters and setters
 }
