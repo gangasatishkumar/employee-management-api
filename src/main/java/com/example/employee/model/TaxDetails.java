@@ -12,4 +12,8 @@ public class TaxDetails {
     private double yearlySalary;
     private double taxAmount;
     private double cessAmount;
+
+    public TaxDetails() {
+
+    }
 }
