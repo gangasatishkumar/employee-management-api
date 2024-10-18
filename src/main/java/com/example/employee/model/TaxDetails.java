@@ -1,4 +1,4 @@
-package com.example.employee_management_api.model;
+package com.example.employee.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

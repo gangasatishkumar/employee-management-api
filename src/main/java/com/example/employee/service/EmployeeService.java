@@ -1,6 +1,6 @@
-package com.example.employee_management_api.service;
+package com.example.employee.service;
 
-import com.example.employee_management_api.model.Employee;
+import com.example.employee.model.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -13,12 +13,12 @@ public class EmployeeService {
 
     // Save employee method
     public Employee saveEmployee(Employee employee) {
-        employeeRepository.put(employee.getEmployeeId(), employee);
+        employeeRepository.put(String.valueOf(employee.getEmployeeId()), employee);
         return employee;
     }
 
     // Get employee by ID method
-    public Employee getEmployeeById(String employeeId) {
-        return employeeRepository.get(employeeId);  // Returns null if the employeeId doesn't exist
+    public Employee getEmployeeById(int employeeId) {
+        return employeeRepository.get(String.valueOf(employeeId));  // Returns null if the employeeId doesn't exist
     }
 }
