@@ -177,9 +177,14 @@ spring:
       enabled: true
 server:
   port: 8080
-Constants File
-The application uses constants for tax calculations defined in TaxServiceConstants.java:
 
+```
+
+## Constants File
+
+The application uses constants for tax calculations defined in `TaxServiceConstants.java`:
+
+```java
 package com.example.employee.constants;
 
 public class TaxServiceConstants {
@@ -195,6 +200,9 @@ public class TaxServiceConstants {
     public static final String INVALID_SALARY_MESSAGE = "Salary must be a positive number.";
     public static final String INVALID_DOJ_MESSAGE = "Date of Joining (DOJ) must be a valid past or current date.";
 }
+
+``
+
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
