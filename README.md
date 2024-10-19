@@ -102,14 +102,15 @@ HTTP Status: 400 Bad Request
   "error": "Salary must be a positive number."
 }
 ## 2. Get Tax Deduction for Employee
+
 ### GET /api/employees/{employeeId}/tax-deduction
 
 This endpoint retrieves the tax deduction details for a specific employee based on the employee ID.
 
-Response (Success):
-HTTP Status: 200 OK
+### Response (Success):
+**HTTP Status:** 200 OK
 
-
+```json
 {
   "employeeId": "1",
   "firstName": "John",
@@ -118,32 +119,49 @@ HTTP Status: 200 OK
   "taxAmount": 30000,
   "cessAmount": 0
 }
-Response (Error - Employee Not Found):
-HTTP Status: 404 Not Found
+```
 
-
-{
-  "error": "Employee not found with ID: 1"
-}
----
 
 # Constants
+
 ## Employee Fields
-employeeId: Unique identifier for the employee (integer).
-firstName: Employee's first name (String).
-lastName: Employee's last name (String).
-email: Employee's email address (String).
-phoneNumbers: List of phone numbers (String[]).
-doj: Date of joining (Date, in the format YYYY-MM-DD).
-salary: Employee's monthly salary (double).
-Tax Calculation Constants
-Income Tax Slabs:
-5% tax on yearly income above ₹250,000.
-10% tax on yearly income above ₹500,000.
-20% tax on yearly income above ₹1,000,000.
-Cess: 2% on yearly salary exceeding ₹2,500,000.
-Configuration
-The application uses an in-memory H2 database, which is configured in the application.yml:
+- **employeeId**: Unique identifier for the employee (integer).
+- **firstName**: Employee's first name (String).
+- **lastName**: Employee's last name (String).
+- **email**: Employee's email address (String).
+- **phoneNumbers**: List of phone numbers (String[]).
+- **doj**: Date of joining (Date, in the format YYYY-MM-DD).
+- **salary**: Employee's monthly salary (double).
+
+## Tax Calculation Constants
+
+### Income Tax Slabs:
+- 5% tax on yearly income above ₹250,000.
+- 10% tax on yearly income above ₹500,000.
+- 20% tax on yearly income above ₹1,000,000.
+
+### Cess:
+- 2% on yearly salary exceeding ₹2,500,000.
+
+## Configuration
+
+The application uses an in-memory H2 database, which is configured in the `application.yml`:
+
+```yaml
+spring:
+  application:
+    name: Employee Management API
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8080
+
 
 
 spring:
