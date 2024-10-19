@@ -37,37 +37,29 @@ cd employee-management-api
 Build the Project
 If you are using Maven:
 
-bash
-Copy code
+
 mvn clean install
 If you are using Gradle:
 
-bash
-Copy code
 gradle build
 Running the Application
 To run the application locally, use the following command:
 
-bash
-Copy code
 mvn spring-boot:run
 Alternatively, you can run the application from your IDE.
 
 Access the Application
 Once the application is up and running, you can access the API at:
 
-bash
-Copy code
+
 http://localhost:8080/api/employees
 You can also access the H2 console at:
 
-bash
-Copy code
+
 http://localhost:8080/h2-console
 The database connection URL for the H2 console is:
 
-makefile
-Copy code
+
 jdbc:h2:mem:testdb
 Username: sa
 Password: (empty)
@@ -79,8 +71,7 @@ POST /api/employees
 This endpoint is used to create a new employee. The request body must contain all required fields.
 
 Request Body (JSON):
-json
-Copy code
+
 {
   "employeeId": 1,
   "firstName": "John",
@@ -93,8 +84,7 @@ Copy code
 Response (Success):
 HTTP Status: 201 Created
 
-json
-Copy code
+
 {
   "employeeId": 1,
   "firstName": "John",
@@ -107,8 +97,7 @@ Copy code
 Response (Error):
 HTTP Status: 400 Bad Request
 
-json
-Copy code
+
 {
   "error": "Salary must be a positive number."
 }
@@ -120,8 +109,7 @@ This endpoint retrieves the tax deduction details for a specific employee based 
 Response (Success):
 HTTP Status: 200 OK
 
-json
-Copy code
+
 {
   "employeeId": "1",
   "firstName": "John",
@@ -133,8 +121,7 @@ Copy code
 Response (Error - Employee Not Found):
 HTTP Status: 404 Not Found
 
-json
-Copy code
+
 {
   "error": "Employee not found with ID: 1"
 }
@@ -156,8 +143,7 @@ Cess: 2% on yearly salary exceeding ₹2,500,000.
 Configuration
 The application uses an in-memory H2 database, which is configured in the application.yml:
 
-yaml
-Copy code
+
 spring:
   application:
     name: Employee Management API
@@ -174,8 +160,6 @@ server:
 Constants File
 The application uses constants for tax calculations defined in TaxServiceConstants.java:
 
-java
-Copy code
 package com.example.employee.constants;
 
 public class TaxServiceConstants {
@@ -196,8 +180,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 This README.md provides an outline of the application, including its structure, setup, and how to interact with the API endpoints.
 
-yaml
-Copy code
 
 ---
 
