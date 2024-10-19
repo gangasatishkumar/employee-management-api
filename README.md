@@ -30,7 +30,6 @@ This is a Spring Boot-based Employee Management API that allows you to manage em
 
 ### Clone the Repository
 
-```bash
 git clone https://github.com/your-repository/employee-management-api.git
 cd employee-management-api
 
@@ -63,10 +62,11 @@ The database connection URL for the H2 console is:
 jdbc:h2:mem:testdb
 Username: sa
 Password: (empty)
+----
 
-API Endpoints
-1. Create Employee
-POST /api/employees
+# API Endpoints
+## 1. Create Employee
+### POST /api/employees
 
 This endpoint is used to create a new employee. The request body must contain all required fields.
 
@@ -101,8 +101,8 @@ HTTP Status: 400 Bad Request
 {
   "error": "Salary must be a positive number."
 }
-2. Get Tax Deduction for Employee
-GET /api/employees/{employeeId}/tax-deduction
+## 2. Get Tax Deduction for Employee
+### GET /api/employees/{employeeId}/tax-deduction
 
 This endpoint retrieves the tax deduction details for a specific employee based on the employee ID.
 
@@ -125,8 +125,10 @@ HTTP Status: 404 Not Found
 {
   "error": "Employee not found with ID: 1"
 }
-Constants
-Employee Fields
+---
+
+# Constants
+## Employee Fields
 employeeId: Unique identifier for the employee (integer).
 firstName: Employee's first name (String).
 lastName: Employee's last name (String).
@@ -175,7 +177,7 @@ public class TaxServiceConstants {
     public static final String INVALID_SALARY_MESSAGE = "Salary must be a positive number.";
     public static final String INVALID_DOJ_MESSAGE = "Date of Joining (DOJ) must be a valid past or current date.";
 }
-License
+# License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 This README.md provides an outline of the application, including its structure, setup, and how to interact with the API endpoints.
